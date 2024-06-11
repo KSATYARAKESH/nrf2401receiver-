@@ -31,17 +31,17 @@ struct PacketData
 };
 PacketData receiverData;
 
-Servo servo1;     //Pin D2
-Servo servo2;     //Pin D3
-Servo servo3;     //Pin D4
-Servo servo4;     //Pin D5
-Servo servo5;     //Pin D6
-Servo servo6;     //Pin D7
-Servo servo7;     //Pin D8
-Servo servo8;     //Pin D9
+Servo servo1;     
+Servo servo2;    
+Servo servo3;     
+Servo servo4;    
+Servo servo5;   
+Servo servo6;    
+Servo servo7;     
+Servo servo8;    
 
-Servo servo9;     //Pin A4
-Servo servo10;     //Pin A5
+Servo servo9;     
+Servo servo10;   
 
 int   led1 = A4;
 int   led2 = A5;
