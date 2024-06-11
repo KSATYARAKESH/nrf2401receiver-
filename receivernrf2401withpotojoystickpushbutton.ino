@@ -27,8 +27,7 @@ struct PacketData
   byte rPotValue;    
   byte switch1Value;
   byte switch2Value;
-  byte switch3Value;
-  byte switch4Value;  
+  byte switch3Value; 
 };
 PacketData receiverData;
 
@@ -44,10 +43,9 @@ Servo servo8;     //Pin D9
 Servo servo9;     //Pin A4
 Servo servo10;     //Pin A5
 
-int   led1 = A0;
-int   led2 = A1;
-int   led3 = A2;
-int   led4 = A3;
+int   led1 = A4;
+int   led2 = A5;
+int   led3 = 10;
 
 //Assign default input received values
 void setInputDefaultValues()
@@ -67,7 +65,6 @@ void setInputDefaultValues()
   receiverData.switch1Value = LOW;
   receiverData.switch2Value = LOW;
   receiverData.switch3Value = LOW;
-  receiverData.switch4Value = LOW; 
 }
 
 void mapAndWriteValues()
@@ -87,7 +84,6 @@ void mapAndWriteValues()
   digitalWrite(led1, receiverData.switch1Value);
   digitalWrite(led2, receiverData.switch2Value);
   digitalWrite(led3, receiverData.switch3Value);
-  digitalWrite(led4, receiverData.switch4Value); 
 }
 
 void setup()
@@ -97,21 +93,20 @@ void setup()
   radio.openReadingPipe(1,pipeIn);
   radio.startListening(); //start the radio receiver 
 
-  servo1.attach(2);
-  servo2.attach(3);
-  servo3.attach(4);
-  servo4.attach(5);
-  servo5.attach(6);
-  servo6.attach(7);
-  servo7.attach(8);
-  servo8.attach(9);
-  servo9.attach(A4);
-  servo10.attach(A5);
+  servo1.attach(A0);
+  servo2.attach(A1);
+  servo3.attach(A2);
+  servo4.attach(A3);
+  servo5.attach(9);
+  servo6.attach(6);
+  servo7.attach(3);
+  servo8.attach(2);
+  servo9.attach(5);
+  servo10.attach(4);
 
   pinMode(led1, OUTPUT);
   pinMode(led2, OUTPUT);
-  pinMode(led3, OUTPUT);
-  pinMode(led4, OUTPUT);      
+  pinMode(led3, OUTPUT);   
  
   setInputDefaultValues();
   mapAndWriteValues();
